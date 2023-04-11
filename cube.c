@@ -28,7 +28,7 @@ void lerp(struct Point a, struct Point b){
     res.y = (int)trunc(round(a.y + (b.y - a.y) * i/diff));
     //printf("%d\t%d\n", res.x, res.y);
     printf("\x1b[%d;%dH", 20 + (int)res.y, 72 + (int)res.x);
-    putchar('*');
+    printf("█");
   }
 }
 
@@ -194,6 +194,7 @@ void main(){
   printf("%f\t%f\t%f\n", p6.x, p6.y, p6.z);
   printf("%f\t%f\t%f\n", p7.x, p7.y, p7.z);
   printf("%f\t%f\t%f\n", p8.x, p8.y, p8.z);*/
+  fflush(stdout);
   usleep(2000);
   }
 }
