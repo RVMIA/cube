@@ -83,7 +83,7 @@ void main(){
  
  
   struct Point p3;
-  float p3x = -10;
+  float p3x = 0;
   float p3y = 10;
   float p3z = -10;
   
@@ -97,9 +97,9 @@ void main(){
  
  
   struct Point p4;
-  float p4x = 10;
-  float p4y = 10;
-  float p4z = -10;
+  float p4x = 0;
+  float p4y = 0;
+  float p4z = 10;
   
   i = p4x;
   j = p4y;
@@ -108,64 +108,6 @@ void main(){
   p4.x = round(j * sin(A) * sin(B) * cos(C) - k * cos(A) * sin(B) * cos(C) + j * cos(A) * sin(C) + k * sin(A) * sin(C) + i * cos(B) * cos(C));
   p4.y = round(j * cos(A) * cos(C) + k * sin(A) * cos(C) - j * sin(A) * sin(B) * sin(C) + k * cos(A) * sin(B) * sin(C) - i * cos(B) * sin(C));
   p4.z = round(k * cos(A) * cos(B) - j * sin(A) * cos(B) + i * sin(B));
- 
- 
-  struct Point p5;
-  float p5x = -10;
-  float p5y = -10;
-  float p5z = 10;
-  
-  i = p5x;
-  j = p5y;
-  k = p5z;
-
-  p5.x = round(j * sin(A) * sin(B) * cos(C) - k * cos(A) * sin(B) * cos(C) + j * cos(A) * sin(C) + k * sin(A) * sin(C) + i * cos(B) * cos(C));
-  p5.y = round(j * cos(A) * cos(C) + k * sin(A) * cos(C) - j * sin(A) * sin(B) * sin(C) + k * cos(A) * sin(B) * sin(C) - i * cos(B) * sin(C));
-  p5.z = round(k * cos(A) * cos(B) - j * sin(A) * cos(B) + i * sin(B));
- 
- 
-  struct Point p6;
-  float p6x = 10;
-  float p6y = -10;
-  float p6z = 10;
-  
-  i = p6x;
-  j = p6y;
-  k = p6z;
-
-  p6.x = round(j * sin(A) * sin(B) * cos(C) - k * cos(A) * sin(B) * cos(C) + j * cos(A) * sin(C) + k * sin(A) * sin(C) + i * cos(B) * cos(C));
-  p6.y = round(j * cos(A) * cos(C) + k * sin(A) * cos(C) - j * sin(A) * sin(B) * sin(C) + k * cos(A) * sin(B) * sin(C) - i * cos(B) * sin(C));
-  p6.z = round(k * cos(A) * cos(B) - j * sin(A) * cos(B) + i * sin(B));
- 
- 
-  struct Point p7;
-  float p7x = -10;
-  float p7y = 10;
-  float p7z = 10; 
-  
-  i = p7x;
-  j = p7y;
-  k = p7z;
-
-  p7.x = round(j * sin(A) * sin(B) * cos(C) - k * cos(A) * sin(B) * cos(C) + j * cos(A) * sin(C) + k * sin(A) * sin(C) + i * cos(B) * cos(C));
-  p7.y = round(j * cos(A) * cos(C) + k * sin(A) * cos(C) - j * sin(A) * sin(B) * sin(C) + k * cos(A) * sin(B) * sin(C) - i * cos(B) * sin(C));
-  p7.z = round(k * cos(A) * cos(B) - j * sin(A) * cos(B) + i * sin(B));
- 
- 
-  struct Point p8;
-  float p8x = 10;
-  float p8y = 10;
-  float p8z = 10;
-  
-  i = p8x;
-  j = p8y;
-  k = p8z;
-
-  p8.x = round(j * sin(A) * sin(B) * cos(C) - k * cos(A) * sin(B) * cos(C) + j * cos(A) * sin(C) + k * sin(A) * sin(C) + i * cos(B) * cos(C));
-  p8.y = round(j * cos(A) * cos(C) + k * sin(A) * cos(C) - j * sin(A) * sin(B) * sin(C) + k * cos(A) * sin(B) * sin(C) - i * cos(B) * sin(C));
-  p8.z = round(k * cos(A) * cos(B) - j * sin(A) * cos(B) + i * sin(B));
- 
- 
 
   printf("\x1b[2J"); 
   A += 0.005;
@@ -173,19 +115,12 @@ void main(){
   C += 0.005;
   
   lerp(p1, p2);
-  lerp(p3, p4);
-  lerp(p1, p3);
+  lerp(p2, p3);
+  lerp(p3, p1);
+
+  lerp(p1, p4);
   lerp(p2, p4);
-
-  lerp(p5, p6);
-  lerp(p7, p8);
-  lerp(p5, p7);
-  lerp(p6, p8);
-
-  lerp(p1, p5);
-  lerp(p2, p6);
-  lerp(p3, p7);
-  lerp(p4, p8);
+  lerp(p3, p4);
 
   fflush(stdout);
   usleep(2000);
