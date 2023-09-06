@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <raylib.h>
-#define FPS 144
+#define FPS 20
 
 struct Point {
   float x, y, z;
@@ -92,8 +92,8 @@ void main(){
     p8.z = calculateZ(p8x, p8y, p8z, A, B, C);
     
     A += 0.1;
-    B += 0.11;
-    C += 0.111;
+    B += 0.1;
+    C += 0.1;
     
     BeginDrawing();
     ClearBackground(BLACK);
